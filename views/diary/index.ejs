@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <title>
+    投稿一覧
+  </title>
+  <link rel='stylesheet' href='/stylesheets/style.css' />
+</head>
+
+<body>
+  <h1>
+    DiaryApp
+  </h1>
+  <a href="/">TOP</a>
+  <a href="/diary/new">新規投稿</a>
+  <hr>
+  <% diaries.forEach(diary => { %>
+  <div>
+    <h3><a href="/diary/<%= diary._id %>"><%= diary.title %></a></h3>
+    <p><%= diary.content %></p>
+    <p>
+    投稿日:<%= 
+    `${diary.createdAt.getFullYear()}/${diary.createdAt.getMonth() + 1}/${diary.createdAt.getDate()}<${diary.createdAt.getHours()}:${diary.createdAt.getMinutes()}>` 
+    %>
+    最終更新日:<%= `${diary.createdAt.getFullYear()}/${diary.createdAt.getMonth() + 1}/${diary.createdAt.getDate()}<${diary.updatedAt.getHours()}:${diary.updatedAt.getMinutes()}>` %>
+    </p>
+  </div>
+  <hr>
+  <% })%>
+  <div></div>
+</body>
+
+</html>

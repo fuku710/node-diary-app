@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <title>
+    編集確認
+  </title>
+  <link rel='stylesheet' href='/stylesheets/style.css' />
+</head>
+
+<body>
+  <h1>
+    編集確認
+  </h1>
+  <h2>タイトル</h2>
+  <p><%= title %></p>
+  <h2>本文</h2>
+  <p><%= content %></p>
+  <form method="post" action="/diary/<%= id %>?_method=PUT" >
+    <input type="hidden" name="id" value="<%= id %>" />
+    <input type="hidden" name="title" value="<%= title %>" />
+    <input type="hidden" name="content" value="<%= content %>" />
+    <button type="submit">編集</button>
+  </form>
+</body>
+
+</html>

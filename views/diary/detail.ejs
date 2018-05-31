@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <title>
+    <%= diary.title %>
+  </title>
+  <link rel='stylesheet' href='/stylesheets/style.css' />
+</head>
+
+<body>
+  <h2><%= diary.title %></h2>
+  <p><%= diary.content %></p>
+  <p>
+    投稿日:<%= 
+    `${diary.createdAt.getFullYear()}/${diary.createdAt.getMonth() + 1}/${diary.createdAt.getDate()}<${diary.createdAt.getHours()}:${diary.createdAt.getMinutes()}>` 
+    %>
+    最終更新日:<%= `${diary.createdAt.getFullYear()}/${diary.createdAt.getMonth() + 1}/${diary.createdAt.getDate()}<${diary.updatedAt.getHours()}:${diary.updatedAt.getMinutes()}>` %>
+  </p>
+  <a href="/diary/<%= diary._id %>?_method=DELETE">削除</a>
+  <a href="/diary/<%= diary._id %>/edit">編集</a>
+  <a href="/diary">戻る</a>
+</body>
+
+</html>

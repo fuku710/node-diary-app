@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>DiaryApp</title>
+    <link rel='stylesheet' href='/stylesheets/style.css' />
+  </head>
+  <body>
+    <h1>DiaryApp</h1>
+    <a href="/diary">すべての投稿</a>
+    <hr>
+    <% diaries.forEach(diary => { %>
+    <div>
+      <h3><%= diary.title %></h3>
+      <p><%= diary.content %></p>
+    </div>
+    <hr>
+    <% })%>
+  </body>
+</html>
